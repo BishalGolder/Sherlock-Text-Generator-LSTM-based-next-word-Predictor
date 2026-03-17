@@ -42,12 +42,13 @@ Sherlock Holmes was a very lovely...
 ---
 ## 📂 Repository Structure
 
+```text
 .
-├── Notebooks/
-│   └── LSTM_Project_notebook.ipynb   # Main code & training pipeline
 ├── Models/
 │   ├── Sherlock_BiLSTM.keras         # Saved Bidirectional model
-│   └── Sherlock_UniLSTM.keras         # Saved Unidirectional model
+│   └── Sherlock_UniLSTM.keras        # Saved Unidirectional model
+├── Notebooks/
+│   └── LSTM_Project_notebook.ipynb   # Main code & training pipeline
 ├── Training_History/
 │   ├── history1_bi.pkl               # Bi-LSTM training logs
 │   └── history2_bi.pkl               # Uni-LSTM training logs
