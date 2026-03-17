@@ -40,18 +40,19 @@ Sherlock Holmes was a very lovely...
 ```
 
 ---
-Project Structure:
+## 📂 Repository Structure
 
 .
-├── Notebooks   
-    ├── LSTM_Project_notebook.ipynb # Main code & training pipeline
-├── requirements.txt                # Environment dependencies
-├── models/
-│   ├── Sherlock_Bilstm.keras       # Saved Bidirectional model
-│   └── Sherlock_Unilstm.keras      # Saved Unidirectional model
-└── history/
-    ├── history1_bi.pkl             # Bi-LSTM training logs
-    └── history2_uni.pkl            # Uni-LSTM training logs
+├── Notebooks/
+│   └── LSTM_Project_notebook.ipynb   # Main code & training pipeline
+├── Models/
+│   ├── Sherlock_BiLSTM.keras         # Saved Bidirectional model
+│   └── Sherlock_UniLSTM.keras         # Saved Unidirectional model
+├── Training_History/
+│   ├── history1_bi.pkl               # Bi-LSTM training logs
+│   └── history2_bi.pkl               # Uni-LSTM training logs
+├── requirements.txt                  # Environment dependencies
+└── README.md                         # Project documentation
 
 ---
 ## 📚 Dataset
