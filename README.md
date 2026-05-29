@@ -1,4 +1,4 @@
-#  SHerlock Text Generator
+# SHerlock Text Generator
 
 ### *LSTM-Based Next Word Prediction*
 
@@ -8,7 +8,7 @@
 
 Generating coherent and stylistically consistent text remains a challenge for many language models. While basic models can predict the next word in a sequence, they often fail to maintain narrative flow, resulting in disjointed and robotic output.
 
-This project aims to address that limitation by training a model that not only predicts the next word but also captures the distinctive and intricate writing style of **Arthur Conan Doyle’s Sherlock Holmes** stories.
+This project aims to address that limitation by training a model that not only predicts the next word, but also captures the distinctive and intricate writing style of **Arthur Conan Doyle’s Sherlock Holmes** stories.
 
 ---
 
@@ -27,19 +27,20 @@ The goal is to evaluate whether bidirectional context improves stylistic coheren
 
 ## ✨ Example Output
 
-**Input:**
+### **Input**
 
-```
+```text
 Sherlock Holmes was a
 ```
 
-**Output:**
+### **Output**
 
-```
+```text
 Sherlock Holmes was a very lovely...
 ```
 
 ---
+
 ## 📂 Repository Structure
 
 ```text
@@ -47,15 +48,20 @@ Sherlock Holmes was a very lovely...
 ├── Models/
 │   ├── Sherlock_BiLSTM.keras         # Saved Bidirectional model
 │   └── Sherlock_UniLSTM.keras        # Saved Unidirectional model
+│
 ├── Notebooks/
 │   └── LSTM_Project_notebook.ipynb   # Main code & training pipeline
+│
 ├── Training_History/
 │   ├── history1_bi.pkl               # Bi-LSTM training logs
-│   └── history2_bi.pkl               # Uni-LSTM training logs
+│   └── history2_uni.pkl              # Uni-LSTM training logs
+│
 ├── requirements.txt                  # Environment dependencies
 └── README.md                         # Project documentation
+```
 
 ---
+
 ## 📚 Dataset
 
 * **Source:** *The Adventures of Sherlock Holmes* (Project Gutenberg)
@@ -76,9 +82,9 @@ Used TensorFlow’s tokenizer to map each unique word to a numerical token.
 
 ### 🔗 Sequence Generation
 
-* Context Window: 50 words (Input)
-* Target Horizon: 1 word (Output)
-* Mapping: Many-to-One
+* **Context Window:** 50 words (Input)
+* **Target Horizon:** 1 word (Output)
+* **Mapping Strategy:** Many-to-One
 
 ### 📏 Padding
 
@@ -106,7 +112,7 @@ Applied **pre-padding** to ensure all sequences have equal length.
 
 ---
 
-### ⚙️ Regularization
+## ⚙️ Regularization
 
 * Dropout layers were added to both models to reduce overfitting.
 
@@ -121,7 +127,7 @@ Applied **pre-padding** to ensure all sequences have equal length.
 
 ### 🔄 Callbacks
 
-* Early stopping (patience = 10 epochs)
+* Early stopping (`patience = 10`)
 * Learning rate reduction on plateau
 
 ---
@@ -132,12 +138,12 @@ Applied **pre-padding** to ensure all sequences have equal length.
 
 Controls randomness in predictions:
 
-* **Low temperature:** More deterministic, predictable text
-* **High temperature:** More creative, but less coherent text
+* **Low temperature:** More deterministic and predictable text
+* **High temperature:** More creative but less coherent text
 
 ### 🎯 Top-k Sampling + Temperature
 
-* Limits predictions to top *k* probable words
+* Limits predictions to the top *k* probable words
 * Applies temperature scaling for balanced creativity and relevance
 
 ---
@@ -150,7 +156,7 @@ Controls randomness in predictions:
 ### 🔍 Key Insights
 
 * The **bidirectional model** produced more grammatically and contextually coherent text
-* It better captured sentence dependencies, especially important in Sherlock Holmes writing style
+* It better captured sentence dependencies, which is especially important in Sherlock Holmes writing style
 * However, it also showed **higher overfitting** compared to the unidirectional model
 
 ---
@@ -158,7 +164,7 @@ Controls randomness in predictions:
 ## ▶️ How to Run
 
 1. Open the notebook in **Google Colab** (GPU recommended)
-2. Change runtime to GPU
+2. Change the runtime type to **GPU**
 3. Run all cells
 4. Save trained models and training history for later use
 
@@ -168,3 +174,6 @@ Controls randomness in predictions:
 
 * Incorporate **Attention Mechanisms**
 * Experiment with **Transformer-based architectures**
+* Train on a larger Sherlock Holmes corpus
+* Add configurable temperature and top-k settings for generation
+* Deploy as a simple web application
